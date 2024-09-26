@@ -1,13 +1,13 @@
 - name: play-1
   hosts: localhost # localhost is where our ansible is master(config mgr. instance)
   tasks:
-    - name: task-1 in play-1
-      ansible.builtin.debug:
-      msg: "this is task-1 in play-1"
+  - name: task-1 in play-1
+    ansible.builtin.debug:
+    msg: "this is task-1 in play-1"
 
 - name: play-2
   hosts: localhost # localhost is where our ansible is master(config mgr. instance)
   tasks:
-    - name: task-1 in play-2
-      ansible.builtin.debug:
-      msg: "this is task-1 in play-2"
+  - name: task-1 in play-2
+    ansible.builtin.debug:
+    msg: "this is task-1 in play-2"
