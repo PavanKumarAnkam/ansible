@@ -1,0 +1,20 @@
+- name: variables    # this is play-level
+  hosts: localhost
+  vars: #variable declaration
+    name: pavankumar    # we can give qoutes also
+    surname: ankam 
+    city: vizag
+  tasks:  # this is task-level
+    - name: print variables(overriden vars)
+      vars: # task level variables
+        city: visakha
+      ansible.builtin.debug:
+       msg: "this message should find person with name {{name}} and {{surname}} as surname in {{city}} city"   
+      # here city will be visakha
+
+    - name: print variables (not (overriden)
+      vars: # task level variables
+        city: visakha
+      ansible.builtin.debug:
+       msg: "this message should find person with name {{name}} and {{surname}} as surname in {{city}} city"   
+      # here city will be vizag only 
