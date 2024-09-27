@@ -1,0 +1,10 @@
+- name: variables    # this is play-level
+  hosts: localhost
+  vars: #variable declaration
+    name: pavankumar
+    surname: ankam
+    city: vizag
+  tasks:            # this is task-level
+    - name: print variables
+      ansible.builtin.debug:
+       msg: "this message should find person with name {{name}} and {{surname}} as surname in {{city}} city"   
