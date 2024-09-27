@@ -1,0 +1,8 @@
+- name: vars from a file
+  hosts: localhost
+  vars_files:
+    - vars.yaml
+  tasks:
+    - name: print variables from vars.yaml file
+      ansible.builtin.debug:
+       msg: "this message should find person with name {{name}} and {{surname}} as surname in {{city}} city"  
