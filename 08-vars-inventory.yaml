@@ -1,5 +1,5 @@
 - name: vars from a file
-  hosts: web   # in sync with inventory file
+  hosts: localhost   # in sync with inventory file
   tasks:
     - name: print variables from vars.yaml file
       ansible.builtin.debug:
