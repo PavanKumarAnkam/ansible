@@ -1,10 +1,10 @@
 - name: vars from a file
   hosts: localhost
   vars_prompt:
-  - uname: USERNAME # entered username is stored in this variable
+  - name: USERNAME # entered username is stored in this variable
     prompt: Please enter your username 
     private: false
-  - pswd: PASSWORD # entered password is stored in this variable
+  - name: PASSWORD # entered password is stored in this variable
     prompt: Please enter your password
     private: true  # not visible when user is entering(for protection)
   tasks:
