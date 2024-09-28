@@ -1,0 +1,20 @@
+- name: conditionals in ansible
+  hosts: localhost
+  become: yes
+  tasks:
+  - name: check user exists or not
+    ansible.builtin.command: id expense
+    register: USER   # above line output is stored into USER
+    ignore_errors: true # ignores and move to next task otherwise it will exit
+
+  - name: print user info
+    ansible.builtin.debug:
+      msg: "User info: {{USER}}"  # rc = 0 is success
+
+  - name: create user
+    ansible.builtin.command: useradd expense
+    when: USER.rc != 0 # conditional used
+
+  - name: say Hello
+    ansible.builtin.debug:
+      msg: "Hello"
