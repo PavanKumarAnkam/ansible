@@ -1,0 +1,17 @@
+- name: datatypes in ansible
+  hosts: localhost
+  vars:
+    Role: DevOps with AWS #string
+    Tools: # list
+    - Linux
+    - Shell
+    - Ansible
+    Experience: # map or dictionary
+      DevOps: 3 # number
+      AWS: 2
+      Docker: 1
+    BankingProject: true #boolean
+  tasks:
+  - name: print variables
+    ansible.builtin.debug:
+      msg: "Job role is: {{Course}}, require knowledge on: {{Tools}}, Experience is: {{Experience}}, is banking project: {{RealProject}}"    
