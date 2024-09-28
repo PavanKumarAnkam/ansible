@@ -14,4 +14,4 @@
   tasks:
   - name: print variables
     ansible.builtin.debug:
-      msg: "Job role is: {{Course}}, require knowledge on: {{Tools}}, Experience is: {{Experience}}, is banking project: {{RealProject}}"    
+      msg: "Job role is: {{Role}}, require knowledge on: {{Tools}}, Experience is: {{Experience}}, is banking project: {{BankingProject}}"    
