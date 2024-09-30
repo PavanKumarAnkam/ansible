@@ -8,3 +8,17 @@
     - linux
     - shell
     - ansible
+
+# used for installations in nodes
+- name: install packages
+  hosts: web   # web tier
+  become: yes
+  tasks:
+  - name: install packages
+    ansible.builtin.dnf:
+      name: "{{ item }}"
+      state: latest
+    loop:
+    - mysql
+    - nginx
+    - postfix    
